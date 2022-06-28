@@ -37,7 +37,7 @@ class Main {
         for(int j=0; j<n; j++){
            arr[i][j] = sc.nextInt();
         }
-      }
+      }ㄷㄷㄷ
      System.out.println(T.solution(n, arr)); 
     }
 }
