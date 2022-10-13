@@ -23,3 +23,28 @@ public class Main {
     }
 }
  
+//Scanner 로 이용한 풀이
+import java.util.Scanner;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        int[] S = new int[n + 1];
+
+        for (int i = 1; i <= n; i++) {
+            S[i] = S[i - 1] + sc.nextInt();
+        }
+
+        for (int i = 0; i < m; i++) {
+            int k = sc.nextInt();
+            int l = sc.nextInt();
+            System.out.println(S[l] - S[k - 1]);
+        }
+    }
+}
