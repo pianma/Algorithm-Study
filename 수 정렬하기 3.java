@@ -28,3 +28,5 @@ class Main {
 		System.out.println(sb);
     }
 }
+
+/*이 문제는 Scanner를 이용하면 시간초과가 일어난다. */
