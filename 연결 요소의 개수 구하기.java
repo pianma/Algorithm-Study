@@ -45,3 +45,62 @@ class Main {
         }
     }
 }
+
+
+
+
+//복습
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+class Main {
+    static ArrayList<Integer>[] A;
+    static boolean[] visited;
+    public static void main(String[] args) {
+
+       
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int count =0;
+
+        
+     visited = new boolean[n + 1];
+        A= new ArrayList[n+1];
+
+        for(int i=1; i<n+1; i++){
+            A[i] = new ArrayList<Integer>();
+        }
+
+        for(int i=0; i<m; i++){
+            int a= sc.nextInt();
+            int b= sc.nextInt();
+
+            A[i].add(a);
+            A[i].add(b);
+        }
+
+        for(int i=1; i<n+1; i++){
+            if(!visited[i]){
+                count++;
+                DFS(i);
+            }
+        }
+        System.out.println(count);
+    }
+    private static void DFS(int v) {
+        if(visited[v]){
+            return;
+        }
+
+        visited[v] = true;
+
+        for(int i: A[v]){
+            if(visited[i]==false){
+                DFS(i);
+            }
+        }
+    }
+}
